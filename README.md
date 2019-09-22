@@ -49,6 +49,6 @@
 
 
 ## API 전문
-- HTTP method는 조회 API 기능이기 때문에 GET만 사용합니다.
+- HTTP method는 문제 대부분이 조회 API 기능이기 때문에 GET만 사용합니다.
 
 # 빌드 및 실행 방법
