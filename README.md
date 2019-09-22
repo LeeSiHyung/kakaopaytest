@@ -10,14 +10,20 @@
     .
     ├── src                         
         ├── main                  
-            ├── java                # 자바 파일
-            ├── resources           # 리소스 파일
-                ├── data            # csv 파일
-                ├── mapper          # mybatis sql 파일
-                ├── schema.sql      # 초기 sql 테이블 생성 파일
-                ├── data.sql        # 초기 sql 데이터 생성 파일
+            ├── java                            # 자바 파일
+            ├── resources                       # 리소스 파일
+                ├── data                        # csv 파일
+                ├── mapper                      # mybatis sql 파일
+                ├── schema.sql                  # 초기 sql 테이블 생성 파일
+                ├── data.sql                    # 초기 sql 데이터 생성 파일
     ├── test                   
-        ├── java                    # unit test 파일 
+        ├── java                                # unit test 
+        ├── com.kaka.kakaopay.config            # config bean unit test 
+        ├── com.kaka.kakaopay.controller        # controller unit test 
+        ├── com.kaka.kakaopay.repository        # repository unit test 
+        ├── com.kaka.kakaopay.service           # service unit test 
+        ├── com.kaka.kakaopay.util              # util unit test 
+        ├── com.kaka.kakaopay.InitDataTest      # csv 파일 생성 unit test  
     └── README.md
 ```
 
