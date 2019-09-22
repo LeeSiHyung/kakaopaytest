@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    jdbcUrl: jdbc:h2:mem:kakaotest
+    username: sa
+    password:
+    driverClassName: org.h2.Driver
+    initialization-mode: always
+
+  h2:
+    console:
+      enabled: true
