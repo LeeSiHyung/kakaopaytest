@@ -56,5 +56,9 @@
 
 ## API 전문
 - HTTP method는 문제 대부분이 조회 API 기능이기 때문에 GET만 사용합니다.
+​- Swagger API-Document UI : 
+    - http://localhost:8080/swagger-ui.html
+
 
 # 빌드 및 실행 방법
+​ gradle build && java -jar build/libs/kakaopay-0.0.1-SNAPSHOT.jar
