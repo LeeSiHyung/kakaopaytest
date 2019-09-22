@@ -4,7 +4,6 @@ import com.kakao.kakaopay.InitDataTest;
 import com.kakao.kakaopay.config.DatabaseConfig;
 import com.kakao.kakaopay.model.Banking;
 import com.kakao.kakaopay.model.Device;
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import org.junit.*;
 import org.junit.runner.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +37,7 @@ public class BankingMapperTest{
     }
 
     @Test
-    // @Transactional
+    @Transactional
     public void insertTest(){
         devices.stream().forEach(d -> {
             bankingMapper.insertDevice(d);
