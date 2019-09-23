@@ -6,6 +6,8 @@ import java.util.*;
 
 @Getter
 @Setter
+@ToString
+@NoArgsConstructor
 @RequiredArgsConstructor
 public class DeivceResult<T> {
     @NonNull
