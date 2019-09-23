@@ -59,7 +59,7 @@ public class BankingControllerTest {
     public void getDevices() throws Exception
     {
         mvc.perform( MockMvcRequestBuilders
-                .get("/v1/bank/devices")
+                .get("/v1/bank/devices/")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
@@ -79,8 +79,7 @@ public class BankingControllerTest {
     public void getYearMaxUsageBanking() throws Exception
     {
         mvc.perform( MockMvcRequestBuilders
-                .get("/v1/bank/yearMaxUsageBanking")
-                .param("year", "2011")
+                .get("/v1/bank/yearMaxUsageBanking/{year}","2011")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
                 .andExpect(status().isOk());
@@ -92,7 +91,7 @@ public class BankingControllerTest {
     {
         Device device = devices.stream().filter(d -> d.getDevice_name().equals("스마트폰")).findAny().get();
         mvc.perform( MockMvcRequestBuilders
-                .get("/v1/bank/deviceMaxUsageBanking")
+                .get("/v1/bank/deviceMaxUsageBanking/{device_id}", device.getDevice_id())
                 .param("device_id", device.getDevice_id())
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())

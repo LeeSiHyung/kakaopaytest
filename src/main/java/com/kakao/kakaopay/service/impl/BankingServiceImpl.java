@@ -6,6 +6,7 @@ import com.kakao.kakaopay.repository.BankingMapper;
 import com.kakao.kakaopay.service.BankingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Flux;
 
 import java.util.Comparator;
 import java.util.List;
@@ -32,7 +33,7 @@ public class BankingServiceImpl implements BankingService {
         List<Banking> bankings = bankingMapper.getBankingList().stream()
                 .collect(Collectors.groupingBy(Banking::getYear, Collectors.maxBy(Comparator.comparing(Banking::getRate))))
                 .entrySet().stream()
-                .map(c -> {return c.getValue().get();}).collect(Collectors.toList());
+                .map(c -> {return c.getValue().orElse(null);}).collect(Collectors.toList());
         return bankings;
     }
 
@@ -40,7 +41,7 @@ public class BankingServiceImpl implements BankingService {
     public Banking getYearMaxUsageBanking(String year) {
         Banking banking = bankingMapper.getBankingList().parallelStream()
                 .filter(b -> b.getYear().equals(year))
-                .max(Comparator.comparing(Banking::getRate)).get();
+                .max(Comparator.comparing(Banking::getRate)).orElse(null);
         return banking;
     }
 
@@ -48,7 +49,7 @@ public class BankingServiceImpl implements BankingService {
     public Banking getDeviceMaxUsageBanking(String device_id) {
         Banking banking = bankingMapper.getBankingList().parallelStream()
                 .filter(b -> b.getDevice_id().equals(device_id))
-                .max(Comparator.comparing(Banking::getRate)).get();
+                .max(Comparator.comparing(Banking::getRate)).orElse(null);
         return banking;
     }
 
