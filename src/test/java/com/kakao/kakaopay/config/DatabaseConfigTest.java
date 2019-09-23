@@ -29,12 +29,6 @@ public class DatabaseConfigTest {
     }
 
     @Test
-    public void transcationManagerBeanPresenceTest(){
-        PlatformTransactionManager transactionManager = applicationContext.getBean("transactionManager", PlatformTransactionManager.class);
-        assertNotNull(transactionManager);
-    }
-
-    @Test
     public void sqlSessionFactoryBeanPresenceTest(){
         SqlSessionFactory sqlSessionFactory = applicationContext.getBean("sqlSessionFactory", SqlSessionFactory.class);
         assertNotNull(sqlSessionFactory);

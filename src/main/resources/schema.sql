@@ -11,3 +11,9 @@ CREATE TABLE BANKING (
        foreign key (DEVICE_ID) references DEVICE(DEVICE_ID)
 );
 
+CREATE TABLE USER (
+       ID                       VARCHAR(255) PRIMARY KEY,
+       PASSWORD                 VARCHAR(255) NOT NULL,
+       TOKEN                    VARCHAR(255) NOT NULL
+);
+
